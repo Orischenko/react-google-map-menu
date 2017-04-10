@@ -132,3 +132,21 @@ iframe, .map{
   border: none;
   z-index: -1;
 }
+
+.items-body-enter {
+  opacity: 0.01;
+}
+
+.items-body-enter.items-body-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.items-body-leave {
+  opacity: 1;
+}
+
+.items-body-leave.items-body-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

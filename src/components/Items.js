@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Item from './Item';
 import Map from './Map';
+import CSSTransition from 'react-addons-css-transition-group';
 
 export default class Items extends Component{
     state = {
@@ -17,7 +18,12 @@ export default class Items extends Component{
         return(
             <div>
                 { this.getLink() }
-                { this.getBody() }
+                <CSSTransition
+                    transitionName="items-body"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}>
+                    { this.getBody() }
+                </CSSTransition>
                 { this.getMap() }
             </div>
         );
