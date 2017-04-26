@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Map from './map_';
+import Map from './Map';
 
 export default class Page extends Component{
     render() {

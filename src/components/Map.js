@@ -1,5 +1,4 @@
-import React, {PropTypes} from "react";
-
+import React from "react";
 import GoogleMap from "react-google-map";
 import GoogleMapLoader from "react-google-maps-loader";
 import { customMapStyle } from './../customColor';
@@ -50,10 +49,6 @@ const Map = ({googleMaps, coordinate}) => (
         />
     </div>
 );
-
-Map.propTypes = {
-    googleMaps: PropTypes.object.isRequired,
-};
 
 export default GoogleMapLoader(Map, {
     libraries: ["places"],

@@ -5,7 +5,6 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const isDevelopment = NODE_ENV === 'development';
 
 module.exports = {
-
     //watch: isDevelopment,
     devtool: isDevelopment && 'eval-source-map',
 
