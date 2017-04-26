@@ -88,9 +88,12 @@ button:focus {
 }
 .items h5, .subitem {
   padding: 0 20px;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
-.items h5.open {
+.items h5.open, .items h5:hover {
   color: #00bcd4;
 }
 
