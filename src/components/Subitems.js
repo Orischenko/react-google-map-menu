@@ -11,20 +11,20 @@ export default class SubItems extends Component{
     };
 
     getSubItems() {
-        const{ subitems, onClick } = this.props;
+        const { subitems, onClick } = this.props;
 
-        if(!subitems) return null;
+        if (!subitems) return null;
 
         const subitemElements = subitems.map((subitem) => {
             return(
-                <li key={ subitem.age } onClick={ onClick(subitem) }><SubItem subitem={ subitem } /></li> //send props up
+                <SubItem key={ subitem.id } onClick={ onClick } subitem={ subitem } />
             );
         });
 
         return(
-            <ul>
+            <div>
                 { subitemElements }
-            </ul>
+            </div>
         );
     }
 }

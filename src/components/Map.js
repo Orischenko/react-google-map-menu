@@ -36,15 +36,14 @@ const Map = ({googleMaps, coordinate}) => (
                 },
             ]}
             center={{ lat: coordinate.lat, lng: coordinate.lng }}
-            zoom={10}
+            zoom={18}
             onLoaded={(googleMaps, map) => {
-                map.setMapTypeId(googleMaps.MapTypeId.ROADMAP);
-                //map.setCenter(new googleMaps.LatLng({ lat: coordinate.lat, lng: coordinate.lng }));
+                map.setMapTypeId(googleMaps.MapTypeId.SATELLITE);  //TERRAIN  HYBRID  SATELLITE
+
             }}
             autoFitBounds={true}
-            boundsOffset={0.006}
+            boundsOffset={0.001}
             fullscreenControl={true}
-            mapTypeControl={false}
             styles={customMapStyle}
         />
     </div>

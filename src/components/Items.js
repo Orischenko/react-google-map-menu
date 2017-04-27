@@ -5,7 +5,8 @@ import CSSTransition from 'react-addons-css-transition-group';
 
 export default class Items extends Component{
     state = {
-        isOpen: false,
+        isOpen: true,
+        openItemId: 'restaurants',
         defaultCoord: {
             lat: 41.904700,
             lng: 12.494367,
@@ -42,16 +43,18 @@ export default class Items extends Component{
     };
 
     getBody() {
-        const{ items } = this.props;
+        const { items } = this.props;
 
-        if(!this.state.isOpen) return null;
+        if (!this.state.isOpen) return null;
 
         const itemElements = items.map((item) => {
             return(
-                <li key={ item.age }>
+                <li key={ item.id }>
                     <Item
                         item={ item }
                         onClick={ this.handleClick }
+                        isOpenItem={ this.state.openItemId === item.id }
+                        toggleOpen={this.toggleItem(item.id)}
                     />
                 </li>
             );
@@ -65,6 +68,18 @@ export default class Items extends Component{
             </div>
         );
     }
+
+    toggleItem = (id) => (event) => {
+        this.setState({
+            openItemId: this.isItemOpen(id) ? null : id
+        })
+    };
+
+    isItemOpen = (id) => {
+        return(
+            this.state.openItemId === id
+        );
+    };
 
     getMap() {
         return(

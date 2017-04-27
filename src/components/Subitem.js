@@ -1,18 +1,12 @@
-import React, { Component } from 'react';
-import Number from './Number';
+import React from 'react';
 
-export default class SubItem extends Component{
-    render() {
-        const{ subitem } = this.props;
-
-        return(
-            <div className="subitem">
-                <span data-icon={ subitem.icon } className="icon"></span>
-                <div>
-                    <p>{ subitem.name }</p>
-                    <Number number={ subitem.numbers } numberLenght={ subitem.numbers.length }/>
-                </div>
+export default function SubItem({subitem, onClick}) {
+    return(
+        <div className="subitem" onClick={ onClick(subitem) }>
+            <span data-icon={ subitem.icon } className="icon"></span>
+            <div>
+                <p>{ subitem.name }</p>
             </div>
-        );
-    };
+        </div>
+    );
 }
