@@ -7,11 +7,12 @@ export default class Items extends Component{
     state = {
         isOpen: true,
         openItemId: 'restaurants',
-        defaultCoord: {
-            lat: 41.904700,
-            lng: 12.494367,
-            name: 'Rome, Italy',
-            address: ''
+        defaultData: {
+            lat: 41.895370,
+            lng: 12.473085,
+            name: 'Da Pancrazio',
+            address: 'Piazza del Biscione, 92, 00186 Roma, Italy',
+            icon: ''
         }
     };
 
@@ -54,7 +55,8 @@ export default class Items extends Component{
                         item={ item }
                         onClick={ this.handleClick }
                         isOpenItem={ this.state.openItemId === item.id }
-                        toggleOpen={this.toggleItem(item.id)}
+                        toggleOpen={ this.toggleItem(item.id) }
+                        handleItemName={ this.state.defaultData.name }
                     />
                 </li>
             );
@@ -83,17 +85,18 @@ export default class Items extends Component{
 
     getMap() {
         return(
-            <Map coordinate={this.state.defaultCoord} />
+            <Map coordinate={this.state.defaultData} />
         );
     }
 
-    handleClick = (coord) => () => {
+    handleClick = (data) => () => {
         this.setState({
-            defaultCoord: {
-                lat: Number(coord.lat),
-                lng: Number(coord.lng),
-                name: coord.name,
-                address: coord.address
+            defaultData: {
+                lat: Number(data.lat),
+                lng: Number(data.lng),
+                name: data.name,
+                address: data.address,
+                icon: data.icon
             }
         });
     }

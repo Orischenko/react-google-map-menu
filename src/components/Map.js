@@ -22,6 +22,7 @@ const Map = ({googleMaps, coordinate}) => (
                         const infoWindow = new googleMaps.InfoWindow({
                             content: `
                                 <div>
+                                  <span data-icon=${coordinate.icon} class="icon"></span>
                                   <h5>${coordinate.name}</h5>
                                   <p>${coordinate.address}</p>
                                 </div>
@@ -38,7 +39,7 @@ const Map = ({googleMaps, coordinate}) => (
             center={{ lat: coordinate.lat, lng: coordinate.lng }}
             zoom={18}
             onLoaded={(googleMaps, map) => {
-                map.setMapTypeId(googleMaps.MapTypeId.SATELLITE);  //TERRAIN  HYBRID  SATELLITE
+                map.setMapTypeId(googleMaps.MapTypeId.SATELLITE);  //TERRAIN  HYBRID  SATELLITE ROADMAP
 
             }}
             autoFitBounds={true}

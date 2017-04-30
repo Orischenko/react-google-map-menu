@@ -3,12 +3,11 @@ import SubItems from './Subitems';
 
 export default class Page extends Component{
     render() {
-        const { item, toggleOpen } = this.props;
+        const { item, toggleOpen, isOpenItem } = this.props;
 
         return(
             <div>
-                <h5 onClick={ toggleOpen } className={!this.props.isOpenItem ? null : "open"}>{ item.name }</h5>
-
+                <h5 onClick={ toggleOpen } className={!isOpenItem ? null : "open"}>{ item.name }</h5>
                 { this.getSubItems() }
             </div>
         );
@@ -18,7 +17,11 @@ export default class Page extends Component{
         if(!this.props.isOpenItem) return null;
 
         return(
-            <SubItems subitems={ this.props.item.subitems } onClick={ this.props.onClick }/>
+            <SubItems
+                subitems={ this.props.item.subitems }
+                onClick={ this.props.onClick }
+                handleItemName={ this.props.handleItemName }
+            />
         );
     }
 }
