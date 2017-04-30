@@ -1,21 +1,26 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100);
+
 h2,
 h3,
 h4,
 h5 {
   color: #888;
 }
+
 h4 span {
   font-weight: 400;
 }
+
 h3 a:hover {
   color: #00bcd4;
 }
+
 a {
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
 }
+
 #container {
   width: 100%;
   margin: 0 auto;
@@ -66,6 +71,7 @@ button:focus {
   max-width: 400px;
   float: left;
 }
+
 #dropdown-menu ul {
   margin: 0;
   padding: 0;
@@ -75,6 +81,7 @@ button:focus {
 #dropdown-menu ul > li {
   padding: 10px 0;
 }
+
 #dropdown-menu ul > li ul > li {
   padding: 0;
 }
@@ -86,6 +93,7 @@ button:focus {
   cursor: pointer;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
+
 .items h5, .subitem {
   padding: 0 20px;
   -webkit-transition: all .3s ease;
@@ -97,10 +105,7 @@ button:focus {
   color: #00bcd4;
 }
 
-.subitem{
-  position: relative;
-}
-.subitem span:before {
+.icon:before {
   content: attr(data-icon);
   font-family: "Restaurant Regular";
   font-size: 37px;
@@ -109,12 +114,30 @@ button:focus {
   top: 50%;
   transform: translateY(-50%);
 }
+
+.gm-style-iw{
+  text-align: center;
+}
+
+.gm-style-iw .icon:before {
+  position: relative;
+  top: 0;
+  transform: translateY(0);
+  color: #00bcd4;
+}
+
+.subitem{
+  position: relative;
+}
+
 .subitem > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 0 0 45px;
 }
+
+.subitem.active,
 .subitem:hover {
   background: #00bcd4;
   color: #fff;
