@@ -7,7 +7,7 @@ export default class Page extends Component{
 
         return(
             <div>
-                <h5 onClick={ toggleOpen } className={!isOpenItem ? null : "open"}>{ item.name }</h5>
+                    <h5 onClick={ toggleOpen } className={!isOpenItem ? null : "open"}>{ item.name }</h5>
                 { this.getSubItems() }
             </div>
         );
